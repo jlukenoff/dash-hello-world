@@ -1,1 +1,3 @@
-include client/dist/*
+recursive-include client/dist/** *.js *.css *.json *.html
+prune tests
+include package.json

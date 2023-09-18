@@ -1,14 +1,11 @@
 const path = require("path");
-const WebpackDashDynamicImport = require("@plotly/webpack-dash-dynamic-import");
-
-const NODE_ENV =
-  process.env.NODE_ENV === "development" ? "development" : "production";
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: {
-    App: "./src/App.tsx",
+    index: "./client/src/index.ts",
   },
-  mode: NODE_ENV,
+  mode: "development",
   module: {
     rules: [
       {
@@ -34,18 +31,21 @@ module.exports = {
     extensions: [".tsx", ".ts", ".js"],
   },
   output: {
-    filename: "[name].min.js",
-    path: path.resolve(__dirname, "dist"),
+    filename: "[name].js",
+    path: path.resolve(__dirname, "client/dist"),
     publicPath: "/",
   },
-  devtool: "source-map",
   devServer: {
     static: {
-      directory: path.join(__dirname, "dist"),
+      directory: path.join(__dirname, "client/dist"),
     },
     compress: true,
     port: 9000,
     historyApiFallback: true,
   },
-  plugins: [new WebpackDashDynamicImport()],
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "client/src/index.html",
+    }),
+  ],
 };

@@ -1,13 +1,14 @@
 {
   "compilerOptions": {
-    "outDir": "./dist/",
     "noImplicitAny": true,
-    "module": "es6",
-    "target": "es5",
     "jsx": "react",
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "moduleResolution": "NodeNext"
-  }
+    "inlineSources": true,
+    "sourceMap": true,
+    "baseUrl": "client/src"
+  },
+  "exclude": ["node_modules", "client/src/index.ts"],
+  "include": ["client/src"]
 }

@@ -4,5 +4,16 @@ node_modules
 __pycache__
 
 # Keep __init__.py by not built app
-dist
-!client/dist/__init__.py
+custom_components
+!custom_components/__init__.py
+
+# Files genenerated by dash build
+_auto_generated_*
+.Rbuildignore
+DESCRIPTION
+NAMESPACE
+Project.toml
+R
+*.jl
+deps
+inst

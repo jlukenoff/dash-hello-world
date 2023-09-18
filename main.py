@@ -1,7 +1,8 @@
 # Import packages
 from dash import Dash, html, dash_table
 import pandas as pd
-import client.dist as client
+import custom_components
+
 
 # Incorporate data
 df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/gapminder2007.csv')
@@ -10,12 +11,12 @@ df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/gapmi
 app = Dash(__name__)
 
 
-breakpoint()
+# breakpoint()
 # App layout
 app.layout = html.Div([
     html.Div(children='My First App with Data'),
     dash_table.DataTable(data=df.to_dict('records'), page_size=10),
-    client.App()
+    custom_components.App()
 ])
 
 # Run the app
