@@ -1,15 +1,26 @@
 import React from "react";
-import { DashBaseProps, PersistenceProps } from "props/dash";
+import { Paper, Typography } from "@mui/material";
+import "react-dom";
 
-export type Props = DashBaseProps & PersistenceProps;
+export interface Props {}
 
 const App: React.FC<Props> = (props) => {
-  return <div>Hello world</div>;
-};
+  const [data, setData] = React.useState();
 
-App.defaultProps = {
-  persisted_props: ["value"],
-  persistence_type: "local",
+  React.useEffect(() => {
+    (async () => {
+      const result = await fetch("/custom/api/example");
+      const data = await result.json();
+      setData(data);
+    })();
+  });
+
+  return (
+    <Paper>
+      <Typography>Hello From React</Typography>
+      {data && <pre>{JSON.stringify(data, null, 2)}</pre>}
+    </Paper>
+  );
 };
 
 export default App;

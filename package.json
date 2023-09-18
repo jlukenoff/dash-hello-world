@@ -5,13 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack serve --config webpack.demo.config.js",
+    "start": "webpack serve",
     "clean": "rm -r node_modules client/dist",
-    "build:js::dev": "webpack --mode development",
-    "build:js": "webpack",
-    "build:backends": "dash-generate-components ./client/src custom_components -p package-info.json --r-prefix '_auto_generated_' --jl-prefix '_auto_generated_' --ignore \\.test\\.",
-    "build": "npm run build:js && npm run build:backends",
-    "watch": "npm run build:js::dev -- --watch"
+    "build": "webpack"
   },
   "keywords": [],
   "author": "John Lukenoff <john@jlukenoff.com>",
@@ -23,8 +19,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@mui/material": "^5.13.7",
-    "react": "^16.14.0",
-    "react-docgen": "^5.4.0",
+    "react": "^18.2.0",
     "react-router-dom": "^6.14.1"
   },
   "devDependencies": {
@@ -35,6 +30,7 @@
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
     "babel-loader": "^9.1.3",
+    "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.8.1",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.3",
