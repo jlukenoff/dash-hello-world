@@ -11,4 +11,5 @@ App.defaultProps = {
   persisted_props: ["value"],
   persistence_type: "local",
 };
+
 export default App;
