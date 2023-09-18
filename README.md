@@ -1,5 +1,10 @@
 # A minimal Plotly Dash App
 
+## System requirements
+
+Python >= 3.8 (3.11 preferred)
+Node >= 12 (18 preferred)
+
 ## Setup instructions
 
 From the project root directory
@@ -7,7 +12,6 @@ From the project root directory
 ```bash
 python3 -m venv venv
 source venv/bin/activate
-# Install py deps
 pip install --upgrade pip
 pip install -r requirements.txt
 ```
@@ -15,7 +19,8 @@ pip install -r requirements.txt
 Build the custom react components
 
 ```bash
-# with the virtual env still activated
+npm install
+# with the virtual env activated
 npm run build
 ```
 
